@@ -130,5 +130,26 @@ comment_gitment_clientSecret: 64c2724d5b0fbb3a417c991025bde8b91bc300e1
 #tag_feed_layout: tag_feed
 #tag_feed_dir: tag
 #tag_permalink_style: pretty
+
+menu:
+  home: "首页"
+  about: "关于"
+
+list:
+  read_more: "阅读全文"
+  comment: "评论"
+
+sidebar:
+  categories: "分类列表"
+  tags: "标签云"
+
+post:
+  author: "作者"
+  update_date: "最后编辑"
+  tags: "标签"
+  categories: "分类"
+
+about:
+  title: "关于作者"
   
 port: 4001
