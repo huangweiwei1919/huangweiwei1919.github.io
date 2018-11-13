@@ -1,0 +1,44 @@
+---
+en:
+  menu:
+    home: "HOME"
+    about: "ABOUT"
+
+  list:
+    read_more: "READ MORE"
+    comment: "COMMENT"
+
+  sidebar:
+    categories: "CATEGORIES"
+    tags: "TAGS"
+
+  post:
+    author: "AUTHOR"
+    update_date: "UPDATE DATE"
+    tags: "TAGS"
+    categories: "CATEGORIES"
+
+  about:
+    title: "ABOUT AUTHOR"
+
+zh_CN:
+  menu:
+    home: "首页"
+    about: "关于"
+
+  list:
+    read_more: "阅读全文"
+    comment: "评论"
+
+  sidebar:
+    categories: "分类列表"
+    tags: "标签云"
+
+  post:
+    author: "作者"
+    update_date: "最后编辑"
+    tags: "标签"
+    categories: "分类"
+
+  about:
+    title: "关于作者"
