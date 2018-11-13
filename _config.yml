@@ -121,6 +121,7 @@ google_analysus:
   token: "your google analysis token"
 
 #gitment
+github_username: huangweiwei1919
 comment_gitment_repo: huangweiwei1919.github.io
 comment_gitment_clientId: 11b3e50c76b95d05b85e
 comment_gitment_clientSecret: 64c2724d5b0fbb3a417c991025bde8b91bc300e1
