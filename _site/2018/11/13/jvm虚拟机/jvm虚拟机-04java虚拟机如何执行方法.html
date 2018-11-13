@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="zh_cn">
+  <head>
+    <title>jvm是如何执行方法调用的？</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta name="keywords" content="jvm是如何执行方法调用的？,jvm虚拟机, jvm,,Pithy" />
+    <meta name="description" content="jvm是如何执行方法调用的？, jvm虚拟机, jvm, 前不久在写代码的时候，我不小心踩到一个可变参数的坑。你或许已经猜到，它正是可变参数方法的重载造成的。" />
+
+    <link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon" />
+
+  <!--Font awesome-->
+  <link href="/assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+
+  <!-- The pithy main css -->
+  <link rel="stylesheet" href="/assets/stylesheet/pithy.css">
+
+
+  <!--[if lt IE 9]>
+  <script src="https://cdn.bootcss.com/html5shiv/3.7.2/html5shiv-printshiv.js"></script>
+  <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.js"></script>
+  <![endif]-->
+  <link rel="alternate" type="application/rss+xml" title="" href="http://localhost:4001/feed.xml" />
+</head>
+
+<body>
+  <nav class="navbar navbar-pithy" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button aria-expanded="false" class="navbar-toggle collapsed" data-target="#pithy-navbar" data-toggle="collapse" type="button">
+                <i class="fa fa-bars"></i>
+            </button>
+            <a class="navbar-brand" href="/">My blog</a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="pithy-navbar">
+            <ul class="nav navbar-nav">
+                <li class="active">
+                    <a href="/">首页</a>
+                </li>
+                <li class="active">
+                    <a href="/about/">关于</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+
+  <div class="container page-content">
+    <div class="container">
+    <div class="col-md-9 col-content">
+        <div id="post-content" class="panel panel-pithy post">
+            <div class="panel-heading">
+                <h3 class="title">
+                  <i class="fa fa-bookmark-o"></i>jvm是如何执行方法调用的？
+                </h3>
+                <ul class="info">
+                    <li>
+                      作者 <span class="author">huangweiwei</span>
+                    </li>
+                    <li>
+                      最后编辑 2018年11月13日
+                    </li>
+                    <li>
+                        分类
+                        
+                        <a class="tag" href="/categories/#jvm虚拟机">jvm虚拟机</a>
+                        
+                    </li>
+                    <li>
+                      标签
+                     
+                         <a class="tag" href="/tag/#jvm">jvm</a>
+                     
+                    </li>
+                </ul>
+            </div>
+            <div class="panel-body content">
+                <p>前不久在写代码的时候，我不小心踩到一个可变参数的坑。你或许已经猜到，
+它正是可变参数方法的重载造成的。</p>
+
+            </div>
+            
+        </div>
+
+
+        <div class="post-recent">
+    <div class="pre">
+        
+        <p><strong>上一篇</strong> <a href="/2018/11/13/jvm%E8%99%9A%E6%8B%9F%E6%9C%BA/jvm%E8%99%9A%E6%8B%9F%E6%9C%BA-03java%E8%99%9A%E6%8B%9F%E6%9C%BA%E6%98%AF%E5%A6%82%E4%BD%95%E5%8A%A0%E8%BD%BDjava%E7%B1%BB%E7%9A%84">java虚拟机如何加载java类的？</a></p>
+        
+    </div>
+    <div class="nex">
+
+        
+        <p><strong>下一篇</strong> <a href="/2018/11/13/jvm%E8%99%9A%E6%8B%9F%E6%9C%BA/jvm%E8%99%9A%E6%8B%9F%E6%9C%BA-05jvm%E5%A6%82%E4%BD%95%E5%A4%84%E7%90%86%E5%BC%82%E5%B8%B8">jvm如何处理异常？</a></p>
+        
+    </div>
+</div>
+
+
+        <!--
+            if config set comment enable,include comment
+        -->
+
+        
+<div id="gitmentContainer"></div>
+<!--
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+-->
+<link rel="stylesheet" href="https://billts.site/extra_css/gitment.css">
+<script src="https://billts.site/js/gitment.js"></script>
+<script>
+    var gitment = new Gitment({
+        id: '<%= page.date %>',
+        owner: '',
+        repo: 'huangweiwei1919.github.io',
+        oauth: {
+            client_id: '11b3e50c76b95d05b85e',
+            client_secret: '64c2724d5b0fbb3a417c991025bde8b91bc300e1',
+        },
+    });
+    gitment.render('gitmentContainer')
+</script>
+
+
+    </div>
+    <div class="col-md-3 col-sidebar">
+        <div class="panel panel-pithy author">
+    <div class="panel-heading avastar">
+        <img src="/assets/images/avatar.png" alt="huangweiwei"/>
+    </div>
+    <div class="panel-body">
+        天道酬勤
+    </div>
+    <div class="panel-footer social">
+        <ul>
+            
+            <li>
+                <a href="https://github.com/huangweiwei1919" target="_blank"><i class="fa fa-github"></i></a>
+            </li>
+            
+            <li>
+                <a href="http://localhost:4001/feed.xml" target="_blank"><i class="fa fa-rss"></i></a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+        <!-- sidebar:category list -->
+<div class="panel panel-default categories">
+    <div class="panel-heading title">
+        分类列表
+    </div>
+    <div class="panel-body list">
+        <ul>
+          
+          <li>
+              <a class="catelink" href="/categories/jvm虚拟机">
+                  jvm虚拟机&nbsp;<span class="count">[6]</span>
+              </a>
+          </li>
+
+          
+          <li>
+              <a class="catelink" href="/categories/计算机网络">
+                  计算机网络&nbsp;<span class="count">[6]</span>
+              </a>
+          </li>
+
+          
+        </ul>
+    </div>
+</div>
+
+        <!-- sidebar: tag list -->
+<div class="panel panel-default tags">
+    <div class="panel-heading title">
+        标签云
+    </div>
+    <div class="panel-body list">
+        
+            <a class="taglink" href="/tag/#jvm" data-target-cate="#jvm">
+                jvm
+            </a>
+        
+            <a class="taglink" href="/tag/#网络协议" data-target-cate="#网络协议">
+                网络协议
+            </a>
+        
+    </div>
+</div>
+
+    </div>
+</div>
+
+  </div>
+
+  <footer>
+  <div class="text-center">
+    © 2014-2030 All rights reserved.
+    Made with <a href="http://jekyllrb.com/" target="_blank">Jekyll</a>
+    and <i class="fa fa-heart"></i> by <a href="https://github.com/guovz/jekyll-pithy" target="_blank">Pithy</a>
+  </div>
+  <div class="totop" data-toggle="totop">
+      <i class="fa fa-chevron-up"></i>
+  </div>
+</footer>
+
+
+  <!--the js include-->
+<script src="/assets/vendor/jquery/jquery.min.js"></script>
+<script src="/assets/script/pithy.js"></script>
+
+<!--
+  the site comment script
+-->
+
+
+
+<!--
+  the site analysis script
+-->
+
+  <!-- baidu analysis -->
+<script>
+    var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?849cfbfccd24bfab27f2d8facddf9133";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+
+
+
+</body>
+</html>

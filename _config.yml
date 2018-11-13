@@ -1,0 +1,135 @@
+#---------------------------------------------------------------
+# Theme version infromation
+#---------------------------------------------------------------
+version: 1.0
+
+#---------------------------------------------------------------
+# Build setting
+#---------------------------------------------------------------
+# gems: [jekyll-paginate]
+
+plugins:
+    - jekyll-paginate
+# Config sass build output by sass_dir
+# Config sass output is compressed or not
+#
+sass:
+    sass_dir: /assets/stylesheet
+    style: :compressed
+
+
+#---------------------------------------------------------------
+# Site infromation setting
+#---------------------------------------------------------------
+
+# Site
+## You can create a locale setting at _locales and name *.yml
+title: ""
+description: "This is a simple theme for jekyll"
+keywords: "Pithy"
+locale: "zh_CN"
+
+# URL
+## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and baseurl as '/child/'
+url: ""
+baseurl: ""
+permalink: /:year/:month/:day/:categories/:title
+
+
+# Pagination
+## Set per_page to 0 to disable pagination
+paginate: 5
+paginate_path: "/page:num/"
+
+
+# Writing
+highlighter: 'pygments'
+kramdown:
+  input:  GFM
+  enable_coderay: true
+  coderay:
+    coderay_line_numbers:  nil
+
+# RSS
+rss:
+  path: "/feed.xml"
+  icon: "rss"
+
+
+#---------------------------------------------------------------
+# Authour infromation setting
+#---------------------------------------------------------------
+
+# Author
+author:
+  name: "huangweiwei"
+  avatar: "/assets/images/avatar.png"
+  motto: "天道酬勤"
+
+# Socials
+## If you want the social show,place sure the social no comment
+## The socials icon base font-awesome,you can learn more on http://fontawesome.io/icons/
+socials:
+    #- name: "weibo"
+    #  url: "http://www.weibo.com/usename/"
+    #  icon: "weibo"
+    - name: "github"
+      url: "https://github.com/huangweiwei1919"
+      icon: "github"
+    #- name: "facebook"
+    #  url: "https://www.facebook.com/usename"
+    #  icon: "facebook"
+
+
+
+
+#---------------------------------------------------------------
+# Site comment setting
+#---------------------------------------------------------------
+
+comment:
+  enable: true
+
+# duoshuo
+duoshuo:
+  enable: false
+  short_name: "your duoshuo short_name"
+
+# disqus
+disqus:
+  enable: false
+  short_name: "your disqus short_name"
+
+#---------------------------------------------------------------
+# Site share setting
+#---------------------------------------------------------------
+duoshuo_share:
+    enable: false
+
+#---------------------------------------------------------------
+# Site analysis setting
+#---------------------------------------------------------------
+# Baidu analysis
+baidu_analysis:
+  enable: true
+  token: "849cfbfccd24bfab27f2d8facddf9133"
+
+# Google analysis
+google_analysus:
+  enable: false
+  token: "your google analysis token"
+
+#gitment
+comment_gitment_repo: huangweiwei1919.github.io
+comment_gitment_clientId: 11b3e50c76b95d05b85e
+comment_gitment_clientSecret: 64c2724d5b0fbb3a417c991025bde8b91bc300e1
+
+tag_page_layout: tag_page
+tag_page_dir: tag
+
+tag_feed_layout: tag_feed
+tag_feed_dir: tag
+
+tag_permalink_style: pretty
+  
+port: 4001
