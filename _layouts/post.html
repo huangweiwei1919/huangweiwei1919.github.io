@@ -10,19 +10,19 @@ layout: default
                 </h3>
                 <ul class="info">
                     <li>
-                      {{ 'post.author' | translate }} <span class="author">{{ page.author }}</span>
+                      {{ site.post.author}} <span class="author">{{ page.author }}</span>
                     </li>
                     <li>
-                      {{ 'post.update_date' | translate }} {{ page.date | date: "%Y年%m月%d日" }}
+                      {{ site.post.update_date }} {{ page.date | date: "%Y年%m月%d日" }}
                     </li>
                     <li>
-                        {{ 'post.categories' | translate }}
+                        {{ site.post.categories }}
                         {% for category in page.categories %}
                         <a class="tag" href="{{site.baseurl}}/categories/#{{ category }}">{{ category }}</a>
                         {% endfor %}
                     </li>
                     <li>
-                      {{ 'post.tags' | translate }}
+                      {{ site.post.tags }}
                      {% for tag in page.tags %}
                          <a class="tag" href="{{site.baseurl}}/tag/#{{ tag }}">{{ tag }}</a>
                      {% endfor %}
