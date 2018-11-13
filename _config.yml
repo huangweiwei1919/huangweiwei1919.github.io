@@ -125,12 +125,10 @@ comment_gitment_repo: huangweiwei1919.github.io
 comment_gitment_clientId: 11b3e50c76b95d05b85e
 comment_gitment_clientSecret: 64c2724d5b0fbb3a417c991025bde8b91bc300e1
 
-tag_page_layout: tag_page
-tag_page_dir: tag
-
-tag_feed_layout: tag_feed
-tag_feed_dir: tag
-
-tag_permalink_style: pretty
+#tag_page_layout: tag_page
+#tag_page_dir: tag
+#tag_feed_layout: tag_feed
+#tag_feed_dir: tag
+#tag_permalink_style: pretty
   
 port: 4001
